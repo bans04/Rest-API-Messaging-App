@@ -1,8 +1,5 @@
 package com.restapimessagingapp.controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestApiController {
@@ -13,6 +10,11 @@ public class RestApiController {
 
     @GetMapping(value = "/query")
     public String sayHello(@RequestParam String name) {
+        return "Hello " + name + " from Bridgelabz ";
+    }
+
+    @GetMapping(value = "/param/{name}")
+    public String sayHelloPath(@PathVariable String name) {
         return "Hello " + name + " from Bridgelabz ";
     }
 }
